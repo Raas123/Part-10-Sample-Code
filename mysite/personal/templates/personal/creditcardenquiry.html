@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+</head>
+
+<body>-->
+{% extends "personal/header.html" %}
+
+{% block content %}
+	<h1> Credit Card Enquiry</h1>
+	<form method="POST">
+		{% csrf_token %}
+		<p> First Name:{{ form.firstName }}</p>
+		<p> Occupation Type:{{ form.occupation_type }}</p>
+		
+		<p> Annual Income :{{ form.annual_income }} </p>
+		<p> Pincode: {{form.pincode}}</p>
+		<p> Do you have any existing credit cards?:{{ form.card_list }}</p>
+		<p> Do you have any active loans? {{form.is_credit_card}}</p>
+		<p> Mobile: {{form.mobile}}</p>
+		<p> Last Name: {{form.lastname}}</p>
+		
+		<p><button type="submit"> View Offers</button> </p>
+	</form>
+	
+{% endblock %}	
+	
+</body>
+</html>

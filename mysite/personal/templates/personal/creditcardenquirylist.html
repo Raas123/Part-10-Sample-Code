@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+</head>
+
+<body>-->
+{% extends "personal/header.html" %}
+
+{% block content %}
+	
+	<!--<ul>
+		{% for list in customeinfolists %}
+			<a href="{%url 'update_list' list.id %)">
+				<li> {{list.firstName}}</li>
+			</a>
+		{% endfor %}
+
+	</ul>-->
+	 
+	
+	<p> Request: {{request.session.firstName}}</p>
+	 
+	<ul>
+		
+		{% for list in offerinfolists %}
+				<li>
+					<tr>
+						<td>{{list.imageLocation}} </td>
+						<td>{{list.is_Travel}} {{is_Airport_Lounge}} {{is_Shopping}} {{is_Dining}} {{is_Movies}}  {{is_Fuel}}  </td>
+						<td>{{list.first_year_fees}} </td>
+						<td>{{list.reward_values}} </td>
+						<td>{{list.chance_of_Approval}} </td>
+						<td>{{list.description}} </td>
+						<td>{{list.id}} </td>
+						
+						<!--<td><a href="{%url 'update_list' {{list.id}} %)">  Apply </a></td>-->
+						<td><a href='update_list/{{list.id}}/'> Apply </a> </td>
+					</tr>
+				</li>
+					
+			{% endfor %}
+	</ul>
+	
+{% endblock %}
+	
+<!--</body>
+</html>-->
